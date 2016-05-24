@@ -56,6 +56,7 @@ public class MinorityComputerLanguagesGet {
     	hm.put("lua", 0);
     	hm.put("php", 0);
     	hm.put("R", 0);
+    	hm.put("matlab", 0);
     	return hm;
     }
     
@@ -126,6 +127,10 @@ public class MinorityComputerLanguagesGet {
     			if(f[i].getName().endsWith(".Rhistory")){
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"R",f[i]);
     			}
+    			
+    			if(f[i].getName().endsWith(".m")||f[i].getName().endsWith(".mat")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"matlab",f[i]);
+    			}
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -139,6 +144,7 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("lua",hmFileCountPerLanguage.get("lua")+hm1.get("lua"));
     			hmFileCountPerLanguage.put("php",hmFileCountPerLanguage.get("php")+hm1.get("php"));
     			hmFileCountPerLanguage.put("R",hmFileCountPerLanguage.get("R")+hm1.get("R"));
+    			hmFileCountPerLanguage.put("matlab",hmFileCountPerLanguage.get("matlab")+hm1.get("matlab"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -149,6 +155,7 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("lua",hmCodeCountPerLanguage.get("lua")+hm2.get("lua"));
     	    	hmCodeCountPerLanguage.put("php",hmCodeCountPerLanguage.get("php")+hm2.get("php"));
     	    	hmCodeCountPerLanguage.put("R",hmCodeCountPerLanguage.get("R")+hm2.get("R"));
+    	    	hmCodeCountPerLanguage.put("matlab",hmCodeCountPerLanguage.get("matlab")+hm2.get("matlab"));
     		}
     	}
     	
