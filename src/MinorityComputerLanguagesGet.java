@@ -28,17 +28,21 @@ public class MinorityComputerLanguagesGet {
     	
     	Iterator iter1 = res1.entrySet().iterator();
     	Iterator iter2 = res2.entrySet().iterator();
+    	int i=0;
+    	int j=0;
     	while (iter1.hasNext()) {
+    		i++;
     	    Map.Entry entry = (Map.Entry) iter1.next();
     	    Object key = entry.getKey();
     	    Object val = entry.getValue();
-    	    System.out.println("file num:"+key+":"+val);
+    	    System.out.println(i+".file num:"+key+":"+val);
     	}
     	while (iter2.hasNext()) {
+    		j++;
     	    Map.Entry entry = (Map.Entry) iter2.next();
     	    Object key = entry.getKey();
     	    Object val = entry.getValue();
-    	    System.out.println("code num:"+key+":"+val);
+    	    System.out.println(j+".code num:"+key+":"+val);
     	}
     }
     
@@ -51,6 +55,7 @@ public class MinorityComputerLanguagesGet {
     	hm.put("perl", 0);
     	hm.put("lua", 0);
     	hm.put("php", 0);
+    	hm.put("R", 0);
     	return hm;
     }
     
@@ -117,6 +122,10 @@ public class MinorityComputerLanguagesGet {
     			if(f[i].getName().endsWith(".php")){
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"php",f[i]);
     			}
+    			
+    			if(f[i].getName().endsWith(".Rhistory")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"R",f[i]);
+    			}
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -129,6 +138,7 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("perl",hmFileCountPerLanguage.get("perl")+hm1.get("perl"));
     			hmFileCountPerLanguage.put("lua",hmFileCountPerLanguage.get("lua")+hm1.get("lua"));
     			hmFileCountPerLanguage.put("php",hmFileCountPerLanguage.get("php")+hm1.get("php"));
+    			hmFileCountPerLanguage.put("R",hmFileCountPerLanguage.get("R")+hm1.get("R"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -138,6 +148,7 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("perl",hmCodeCountPerLanguage.get("perl")+hm2.get("perl"));
     	    	hmCodeCountPerLanguage.put("lua",hmCodeCountPerLanguage.get("lua")+hm2.get("lua"));
     	    	hmCodeCountPerLanguage.put("php",hmCodeCountPerLanguage.get("php")+hm2.get("php"));
+    	    	hmCodeCountPerLanguage.put("R",hmCodeCountPerLanguage.get("R")+hm2.get("R"));
     		}
     	}
     	
