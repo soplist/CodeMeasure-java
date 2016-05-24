@@ -57,6 +57,9 @@ public class MinorityComputerLanguagesGet {
     	hm.put("php", 0);
     	hm.put("R", 0);
     	hm.put("matlab", 0);
+    	hm.put("fortran", 0);
+    	hm.put("vbscript", 0);
+    	hm.put("ada", 0);
     	return hm;
     }
     
@@ -131,6 +134,19 @@ public class MinorityComputerLanguagesGet {
     			if(f[i].getName().endsWith(".m")||f[i].getName().endsWith(".mat")){
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"matlab",f[i]);
     			}
+    			
+    			if(f[i].getName().endsWith(".f90")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"fortran",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".vbs")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"vbscript",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".adb")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"ada",f[i]);
+    			}
+    			
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -145,6 +161,9 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("php",hmFileCountPerLanguage.get("php")+hm1.get("php"));
     			hmFileCountPerLanguage.put("R",hmFileCountPerLanguage.get("R")+hm1.get("R"));
     			hmFileCountPerLanguage.put("matlab",hmFileCountPerLanguage.get("matlab")+hm1.get("matlab"));
+    			hmFileCountPerLanguage.put("fortran",hmFileCountPerLanguage.get("fortran")+hm1.get("fortran"));
+    			hmFileCountPerLanguage.put("vbscript",hmFileCountPerLanguage.get("vbscript")+hm1.get("vbscript"));
+    			hmFileCountPerLanguage.put("ada",hmFileCountPerLanguage.get("ada")+hm1.get("ada"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -156,6 +175,9 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("php",hmCodeCountPerLanguage.get("php")+hm2.get("php"));
     	    	hmCodeCountPerLanguage.put("R",hmCodeCountPerLanguage.get("R")+hm2.get("R"));
     	    	hmCodeCountPerLanguage.put("matlab",hmCodeCountPerLanguage.get("matlab")+hm2.get("matlab"));
+    	    	hmCodeCountPerLanguage.put("fortran",hmCodeCountPerLanguage.get("fortran")+hm2.get("fortran"));
+    	    	hmCodeCountPerLanguage.put("vbscript",hmCodeCountPerLanguage.get("vbscript")+hm2.get("vbscript"));
+    	    	hmCodeCountPerLanguage.put("ada",hmCodeCountPerLanguage.get("ada")+hm2.get("ada"));
     		}
     	}
     	
