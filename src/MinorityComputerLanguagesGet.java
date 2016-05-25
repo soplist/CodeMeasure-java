@@ -60,6 +60,8 @@ public class MinorityComputerLanguagesGet {
     	hm.put("fortran", 0);
     	hm.put("vbscript", 0);
     	hm.put("ada", 0);
+    	hm.put("smalltalk", 0);
+    	hm.put("lisp", 0);
     	return hm;
     }
     
@@ -147,6 +149,10 @@ public class MinorityComputerLanguagesGet {
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"ada",f[i]);
     			}
     			
+    			if(f[i].getName().endsWith(".lisp")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"lisp",f[i]);
+    			}
+    			
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -164,6 +170,8 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("fortran",hmFileCountPerLanguage.get("fortran")+hm1.get("fortran"));
     			hmFileCountPerLanguage.put("vbscript",hmFileCountPerLanguage.get("vbscript")+hm1.get("vbscript"));
     			hmFileCountPerLanguage.put("ada",hmFileCountPerLanguage.get("ada")+hm1.get("ada"));
+    			hmFileCountPerLanguage.put("smalltalk",hmFileCountPerLanguage.get("smalltalk")+hm1.get("smalltalk"));
+    			hmFileCountPerLanguage.put("lisp",hmFileCountPerLanguage.get("lisp")+hm1.get("lisp"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -178,6 +186,8 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("fortran",hmCodeCountPerLanguage.get("fortran")+hm2.get("fortran"));
     	    	hmCodeCountPerLanguage.put("vbscript",hmCodeCountPerLanguage.get("vbscript")+hm2.get("vbscript"));
     	    	hmCodeCountPerLanguage.put("ada",hmCodeCountPerLanguage.get("ada")+hm2.get("ada"));
+    	    	hmCodeCountPerLanguage.put("smalltalk",hmCodeCountPerLanguage.get("smalltalk")+hm2.get("smalltalk"));
+    	    	hmCodeCountPerLanguage.put("lisp",hmCodeCountPerLanguage.get("lisp")+hm2.get("lisp"));
     		}
     	}
     	
