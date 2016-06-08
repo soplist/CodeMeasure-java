@@ -69,6 +69,7 @@ public class MinorityComputerLanguagesGet {
     	hm.put("scheme", 0);
     	hm.put("cobol", 0);
     	hm.put("D", 0);
+    	hm.put("Go", 0);
     	return hm;
     }
     
@@ -188,6 +189,10 @@ public class MinorityComputerLanguagesGet {
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"D",f[i]);
     			}
     			
+    			if(f[i].getName().endsWith(".go")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"Go",f[i]);
+    			}
+    			
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -214,6 +219,7 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("scheme",hmFileCountPerLanguage.get("scheme")+hm1.get("scheme"));
     			hmFileCountPerLanguage.put("cobol",hmFileCountPerLanguage.get("cobol")+hm1.get("cobol"));
     			hmFileCountPerLanguage.put("D",hmFileCountPerLanguage.get("D")+hm1.get("D"));
+    			hmFileCountPerLanguage.put("Go",hmFileCountPerLanguage.get("Go")+hm1.get("Go"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -237,6 +243,7 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("scheme",hmCodeCountPerLanguage.get("scheme")+hm2.get("scheme"));
     	    	hmCodeCountPerLanguage.put("cobol",hmCodeCountPerLanguage.get("cobol")+hm2.get("cobol"));
     	    	hmCodeCountPerLanguage.put("D",hmCodeCountPerLanguage.get("D")+hm2.get("D"));
+    	    	hmCodeCountPerLanguage.put("Go",hmCodeCountPerLanguage.get("Go")+hm2.get("Go"));
     		}
     	}
     	
