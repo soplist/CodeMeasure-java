@@ -64,6 +64,11 @@ public class MinorityComputerLanguagesGet {
     	hm.put("lisp", 0);
     	hm.put("erlang", 0);
     	hm.put("haskell", 0);
+    	hm.put("prolog", 0);
+    	hm.put("rust", 0);
+    	hm.put("scheme", 0);
+    	hm.put("cobol", 0);
+    	hm.put("D", 0);
     	return hm;
     }
     
@@ -163,6 +168,26 @@ public class MinorityComputerLanguagesGet {
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"haskell",f[i]);
     			}
     			
+    			if(f[i].getName().endsWith(".pl")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"prolog",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".rs")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"rust",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".scm")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"scheme",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".cbl")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"cobol",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".d")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"D",f[i]);
+    			}
+    			
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -184,6 +209,11 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("lisp",hmFileCountPerLanguage.get("lisp")+hm1.get("lisp"));
     			hmFileCountPerLanguage.put("erlang",hmFileCountPerLanguage.get("erlang")+hm1.get("erlang"));
     			hmFileCountPerLanguage.put("haskell",hmFileCountPerLanguage.get("haskell")+hm1.get("haskell"));
+    			hmFileCountPerLanguage.put("prolog",hmFileCountPerLanguage.get("prolog")+hm1.get("prolog"));
+    			hmFileCountPerLanguage.put("rust",hmFileCountPerLanguage.get("rust")+hm1.get("rust"));
+    			hmFileCountPerLanguage.put("scheme",hmFileCountPerLanguage.get("scheme")+hm1.get("scheme"));
+    			hmFileCountPerLanguage.put("cobol",hmFileCountPerLanguage.get("cobol")+hm1.get("cobol"));
+    			hmFileCountPerLanguage.put("D",hmFileCountPerLanguage.get("D")+hm1.get("D"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -202,6 +232,11 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("lisp",hmCodeCountPerLanguage.get("lisp")+hm2.get("lisp"));
     	    	hmCodeCountPerLanguage.put("erlang",hmCodeCountPerLanguage.get("erlang")+hm2.get("erlang"));
     	    	hmCodeCountPerLanguage.put("haskell",hmCodeCountPerLanguage.get("haskell")+hm2.get("haskell"));
+    	    	hmCodeCountPerLanguage.put("prolog",hmCodeCountPerLanguage.get("prolog")+hm2.get("prolog"));
+    	    	hmCodeCountPerLanguage.put("rust",hmCodeCountPerLanguage.get("rust")+hm2.get("rust"));
+    	    	hmCodeCountPerLanguage.put("scheme",hmCodeCountPerLanguage.get("scheme")+hm2.get("scheme"));
+    	    	hmCodeCountPerLanguage.put("cobol",hmCodeCountPerLanguage.get("cobol")+hm2.get("cobol"));
+    	    	hmCodeCountPerLanguage.put("D",hmCodeCountPerLanguage.get("D")+hm2.get("D"));
     		}
     	}
     	
