@@ -70,6 +70,12 @@ public class MinorityComputerLanguagesGet {
     	hm.put("cobol", 0);
     	hm.put("D", 0);
     	hm.put("Go", 0);
+    	hm.put("ActionScript", 0);
+    	hm.put("ABAP", 0);//sap
+    	hm.put("ML", 0);
+    	hm.put("f#", 0);
+    	hm.put("RPG", 0);//ibm os/400
+    	hm.put("awk", 0);//linux
     	return hm;
     }
     
@@ -193,6 +199,10 @@ public class MinorityComputerLanguagesGet {
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"Go",f[i]);
     			}
     			
+    			if(f[i].getName().endsWith(".fs")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"f#",f[i]);
+    			}
+    			
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -220,6 +230,7 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("cobol",hmFileCountPerLanguage.get("cobol")+hm1.get("cobol"));
     			hmFileCountPerLanguage.put("D",hmFileCountPerLanguage.get("D")+hm1.get("D"));
     			hmFileCountPerLanguage.put("Go",hmFileCountPerLanguage.get("Go")+hm1.get("Go"));
+    			hmFileCountPerLanguage.put("f#",hmFileCountPerLanguage.get("f#")+hm1.get("f#"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -244,6 +255,7 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("cobol",hmCodeCountPerLanguage.get("cobol")+hm2.get("cobol"));
     	    	hmCodeCountPerLanguage.put("D",hmCodeCountPerLanguage.get("D")+hm2.get("D"));
     	    	hmCodeCountPerLanguage.put("Go",hmCodeCountPerLanguage.get("Go")+hm2.get("Go"));
+    	    	hmCodeCountPerLanguage.put("f#",hmCodeCountPerLanguage.get("f#")+hm2.get("f#"));
     		}
     	}
     	
