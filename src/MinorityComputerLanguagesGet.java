@@ -76,6 +76,9 @@ public class MinorityComputerLanguagesGet {
     	hm.put("f#", 0);
     	hm.put("RPG", 0);//ibm os/400
     	hm.put("awk", 0);//linux
+    	hm.put("cl", 0);//ibm os/400,control language
+    	hm.put("dart", 0);//linux
+    	hm.put("groovy", 0);
     	return hm;
     }
     
@@ -203,6 +206,14 @@ public class MinorityComputerLanguagesGet {
     				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"f#",f[i]);
     			}
     			
+    			if(f[i].getName().endsWith(".dart")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"dart",f[i]);
+    			}
+    			
+    			if(f[i].getName().endsWith(".groovy")){
+    				operator(hmFileCountPerLanguage,hmCodeCountPerLanguage,"groovy",f[i]);
+    			}
+    			
     		}
     		if(f[i].isDirectory()){
     			ArrayList<HashMap<String,Integer>> l1 = getCodeAndFilecount(f[i]);
@@ -231,6 +242,8 @@ public class MinorityComputerLanguagesGet {
     			hmFileCountPerLanguage.put("D",hmFileCountPerLanguage.get("D")+hm1.get("D"));
     			hmFileCountPerLanguage.put("Go",hmFileCountPerLanguage.get("Go")+hm1.get("Go"));
     			hmFileCountPerLanguage.put("f#",hmFileCountPerLanguage.get("f#")+hm1.get("f#"));
+    			hmFileCountPerLanguage.put("dart",hmFileCountPerLanguage.get("dart")+hm1.get("dart"));
+    			hmFileCountPerLanguage.put("groovy",hmFileCountPerLanguage.get("groovy")+hm1.get("groovy"));
     			
     	    	HashMap<String,Integer> hm2 = l1.get(1);
     	    	hmCodeCountPerLanguage.put("pascal",hmCodeCountPerLanguage.get("pascal")+hm2.get("pascal"));
@@ -256,6 +269,8 @@ public class MinorityComputerLanguagesGet {
     	    	hmCodeCountPerLanguage.put("D",hmCodeCountPerLanguage.get("D")+hm2.get("D"));
     	    	hmCodeCountPerLanguage.put("Go",hmCodeCountPerLanguage.get("Go")+hm2.get("Go"));
     	    	hmCodeCountPerLanguage.put("f#",hmCodeCountPerLanguage.get("f#")+hm2.get("f#"));
+    	    	hmCodeCountPerLanguage.put("dart",hmCodeCountPerLanguage.get("dart")+hm2.get("dart"));
+    	    	hmCodeCountPerLanguage.put("groovy",hmCodeCountPerLanguage.get("groovy")+hm2.get("groovy"));
     		}
     	}
     	
