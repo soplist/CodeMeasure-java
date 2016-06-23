@@ -77,8 +77,50 @@ public class MinorityComputerLanguagesGet {
     	hm.put("RPG", 0);//ibm os/400
     	hm.put("awk", 0);//linux
     	hm.put("cl", 0);//ibm os/400,control language
-    	hm.put("dart", 0);//linux
+    	hm.put("dart", 0);//like javascript failed
     	hm.put("groovy", 0);
+    	hm.put("foxpro", 0);//fox software,db product,microsoft
+    	
+    	/*will study*/
+    	hm.put("labView", 0);//ni
+    	hm.put("PostScript", 0);//print,interpress language,Forth language
+    	hm.put("z shell", 0);//linux
+    	hm.put("ladder logic", 0);//plc
+    	hm.put("lo", 0);
+    	hm.put("openEdge abl", 0);//progress,flow language
+    	hm.put("assembly", 0);//MOV DS,AX
+    	hm.put("scratch", 0);//MIT
+    	hm.put("SAS", 0);//statistical analysis system
+    	hm.put("logo", 0);//MIT,drawing
+    	hm.put("inform", 0);
+    	hm.put("cT", 0);
+    	hm.put("max/msp", 0);//audio media
+    	hm.put("PL/I", 0);//programming language one,ibm,like pascal
+    	hm.put("javaFX script", 0);//sun
+    	hm.put("boume shell", 0);
+    	hm.put("s-lang", 0);//linux
+    	hm.put("alice", 0);//AI
+    	hm.put("Tcl/Tk", 0);//tool control language,linux
+    	hm.put("NXT-G", 0);//graphical programming language for mindstorms NXT
+    	hm.put("Caml/F#", 0);
+    	hm.put("VHDL", 0);//Very-High-Speed Integrated Circuit Hardware Description Language
+    	hm.put("natural", 0);
+    	hm.put("icon", 0);//process string and structure
+    	hm.put("prowerBasic", 0);//basic compiler,like QBasic and QuickBasic
+    	hm.put("c shell", 0);
+    	hm.put("AD", 0);
+    	hm.put("clean", 0);//concurrent clean,functional programming language,like haskell
+    	hm.put("progress 4gl", 0);
+    	hm.put("apl", 0);//Array Processing Language
+    	
+    	//(Visual) FoxPro,4th Dimension/4D,ABC,Alice,Apex,Automator,
+    	//Awk,Bash,bc,BlitzMax,Bourne shell,C shell,C-Omega,cg,CL(OS/400),
+    	//Clean,Clojure,DiBOL,Emacs Lisp,Erlang,Factor,Forth,Icon,IDL,
+    	//Inform,Ioke,J,Korn shell,Ladder Logic,M4,Mathematica,Monkey,Moto,
+    	//NATURAL,NXT-G,OpenCL,Oxygene,Oz,PILOT,Programming Without Coding Technology,
+    	//Pure Data,Rust,S,SIGNAL,SPARK,Standard ML,Tcl,TOM,VHDL,Z shell
+    	
+    	
     	return hm;
     }
     
